@@ -1,16 +1,16 @@
-FROM parrotstream/centos-openjdk
+FROM parrotstream/centos-openjdk:10
 
 MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 
 USER root
 
-ENV CONFLUENT_PLATFORM_MAJOR_VER 3.2
+ENV CONFLUENT_PLATFORM_MAJOR_VER 4.1
 ENV CONFLUENT_PLATFORM_MINOR_VER 0
 ENV CONFLUENT_PLATFORM_VER $CONFLUENT_PLATFORM_MAJOR_VER.$CONFLUENT_PLATFORM_MINOR_VER
 ENV SCALA_VER 2.11
 
 # Install Confluent Repo
-RUN rpm --import http://packages.confluent.io/rpm/${CONFLUENT_PLATFORM_MAJOR_VER}/archive.key
+RUN rpm --import https://packages.confluent.io/rpm/${CONFLUENT_PLATFORM_MAJOR_VER}/archive.key
 COPY confluent.repo /etc/yum.repos.d/
 
 # Install needed packages
@@ -31,5 +31,13 @@ RUN chmod +x *.sh
 COPY etc/ /etc/
 
 EXPOSE 9092 8082
+
+RUN useradd -d /usr/kafka kafka; \
+    chown kafka:kafka /usr/kafka; \
+    chown kafka:kafka /etc/kafka; \
+    chown kafka:kafka /var/log/kafka; \
+    chown kafka:kafka /etc/kafka-rest
+
+USER kafka
 
 ENTRYPOINT ["supervisord", "-c", "/etc/supervisord.conf", "-n"]

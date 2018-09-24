@@ -3,7 +3,6 @@ ___
 
 ### Description
 
-
 This image runs:
 
  * the Confluent distribution of [*Apache Kafka*](https://github.com/confluentinc/kafka.git)
@@ -35,5 +34,6 @@ Setting the project name to *parrot* with the **-p** option is useful to share t
 
 ### Available tags:
 
-- Apache Kafka 0.10.2.0 ([0.10.2.0](https://github.com/parrot-stream/docker-kafka/blob/0.10.2.0/Dockerfile), [latest](https://github.com/parrot-stream/docker-kafka/blob/latest/Dockerfile))
+- Apache Kafka 1.1.1 ([1.1.1](https://github.com/parrot-stream/docker-kafka/blob/1.1.1/Dockerfile), [latest](https://github.com/parrot-stream/docker-kafka/blob/latest/Dockerfile))
+- Apache Kafka 0.10.2.0 ([0.10.2.0](https://github.com/parrot-stream/docker-kafka/blob/0.10.2.0/Dockerfile))
 - Apache Kafka 0.10.0.1 ([0.10.0.1](https://github.com/parrot-stream/docker-kafka/blob/0.10.0.1/Dockerfile))
