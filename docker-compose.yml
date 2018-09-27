@@ -1,18 +1,18 @@
 version: '3'
 services:
   zookeeper:
-    image: 'parrotstream/zookeeper:latest'
+    image: parrotstream/zookeeper:latest
     networks:
     - parrot
     ports:
-    - '2181:2181'
-    - '2888:2888'
-    - '3888:3888'
+    - 2181:2181
+    - 2888:2888
+    - 3888:3888
   kafka:
     build:
       context: .
       dockerfile: Dockerfile
-    image: 'parrotstream/kafka:latest'
+    image: parrotstream/kafka:1.1.1-4.1.2
     networks:
     - parrot
     links:
