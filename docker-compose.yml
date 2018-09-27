@@ -1,7 +1,7 @@
 version: '3'
 services:
   zookeeper:
-    image: 'parrotstream/zookeeper:latest'
+    image: parrotstream/zookeeper:latest
     networks:
     - parrot
     ports:
@@ -12,7 +12,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: 'parrotstream/kafka:latest'
+    image: parrotstream/kafka:latest
     networks:
     - parrot
     links:
