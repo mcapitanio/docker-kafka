@@ -1,6 +1,7 @@
 version: '3'
 services:
   zookeeper:
+    container_name: zookeeper
     image: parrotstream/zookeeper:latest
     networks:
     - parrot
@@ -9,6 +10,7 @@ services:
     - '2888:2888'
     - '3888:3888'
   kafka:
+    container_name: kafka
     build:
       context: .
       dockerfile: Dockerfile
@@ -21,12 +23,7 @@ services:
     - 9092:9092
     - 8081:8081
     - 8082:8082
-    - 8084:8083
-    - 8001:8000
-    environment:
-    - KAFKA_REST_PROXY_URL=http://localhost:8082
-    - PROXY=true
-    - PROXY_SKIP_VERIFY=true
+    - 8083:8083
 networks:
   default:
     external:

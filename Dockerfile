@@ -22,7 +22,7 @@ RUN easy_install supervisor
 RUN yum clean all
 
 # All Kafka Stuff
-RUN yum install -y confluent-kafka-$SCALA_VER confluent-kafka-rest
+RUN yum install -y confluent-kafka-$SCALA_VER confluent-kafka-rest confluent-kafka-connect-hdfs confluent-kafka-connect-jdbc confluent-kafka-connect-jms confluent-kafka-connect-elasticsearch confluent-kafka-connect-s3 confluent-schema-registry librdkafka confluent-libserdes confluent-ksql
 
 WORKDIR /
 
@@ -32,14 +32,15 @@ RUN chmod +x *.sh
 
 COPY etc/ /etc/
 
-EXPOSE 9092 8082
+EXPOSE 9092 8081 8082 8083
 
-RUN useradd -d /usr/kafka kafka; \
-    chown kafka:kafka /usr/kafka; \
-    chown kafka:kafka /etc/kafka; \
-    chown kafka:kafka /var/log/kafka; \
-    chown kafka:kafka /etc/kafka-rest
+#RUN useradd -d /usr/kafka kafka; \
+#    chown kafka:kafka /usr/kafka; \
+#    chown kafka:kafka /etc/kafka; \
+#    chown kafka:kafka /var/log/kafka; \
+#    chown kafka:kafka /etc/kafka-rest; \
+#    chown kafka:kafka /etc/schema-registry
 
-USER kafka
+#USER kafka
 
 ENTRYPOINT ["supervisord", "-c", "/etc/supervisord.conf", "-n"]
