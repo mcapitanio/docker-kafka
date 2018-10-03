@@ -1,23 +1,12 @@
 version: '3'
 services:
-  zookeeper:
-    container_name: zookeeper
-    image: parrotstream/zookeeper:latest
-    networks:
-    - parrot
-    ports:
-    - '2181:2181'
-    - '2888:2888'
-    - '3888:3888'
   kafka:
     container_name: kafka
     build:
       context: .
       dockerfile: Dockerfile
     image: parrotstream/kafka:2.0.0-5.0.0
-    networks:
-    - parrot
-    links:
+    external_links:
     - zookeeper
     ports:
     - 9092:9092
@@ -27,6 +16,4 @@ services:
 networks:
   default:
     external:
-      name: parrot
-  parrot:
-    driver: bridge
+      name: parrot_default
