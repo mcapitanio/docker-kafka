@@ -34,13 +34,4 @@ COPY etc/ /etc/
 
 EXPOSE 9092 8081 8082 8083
 
-#RUN useradd -d /usr/kafka kafka; \
-#    chown kafka:kafka /usr/kafka; \
-#    chown kafka:kafka /etc/kafka; \
-#    chown kafka:kafka /var/log/kafka; \
-#    chown kafka:kafka /etc/kafka-rest; \
-#    chown kafka:kafka /etc/schema-registry
-
-#USER kafka
-
 ENTRYPOINT ["supervisord", "-c", "/etc/supervisord.conf", "-n"]
