@@ -3,11 +3,12 @@ ___
 
 ### Description
 
-This image runs:
+This image runs the Confluent distribution of:
 
- * the Confluent distribution of [*Apache Kafka*](https://github.com/confluentinc/kafka.git)
- * the Confluent [*Kafka REST Proxy*](https://github.com/confluentinc/kafka-rest.git)
- 
+ * [*Apache Kafka*](https://github.com/confluentinc/kafka.git)
+ * [*Kafka REST Proxy*](https://github.com/confluentinc/kafka-rest.git)
+ * [*Schema Registry*](https://github.com/confluentinc/schema-registry)
+
 on a Centos Linux distribution.
 
 The *latest* tag of this image is build with the [latest stable](https://github.com/confluentinc/kafka/releases/tag/v5.0.0) release of Confluent Kafka distribution on the latest available Centos release.
@@ -32,6 +33,7 @@ Run with Docker Compose:
 
 ### Available tags:
 
-- Apache Kafka 1.1.1 ([1.1.1-4.1.2](https://github.com/parrot-stream/docker-kafka/blob/1.1.1-4.1.2/Dockerfile), [latest](https://github.com/parrot-stream/docker-kafka/blob/latest/Dockerfile))
+- Apache Kafka 2.0.0 ([2.0.0-5.0.0](https://github.com/parrot-stream/docker-kafka/blob/2.0.0-5.0.0/Dockerfile), [latest](https://github.com/parrot-stream/docker-kafka/blob/latest/Dockerfile))
+- Apache Kafka 1.1.1 ([1.1.1-4.1.2](https://github.com/parrot-stream/docker-kafka/blob/1.1.1-4.1.2/Dockerfile))
 - Apache Kafka 0.10.2.0 ([0.10.2.0](https://github.com/parrot-stream/docker-kafka/blob/0.10.2.0/Dockerfile))
 - Apache Kafka 0.10.0.1 ([0.10.0.1](https://github.com/parrot-stream/docker-kafka/blob/0.10.0.1/Dockerfile))
