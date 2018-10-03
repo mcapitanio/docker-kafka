@@ -35,5 +35,5 @@ Run with Docker Compose:
 
 - Apache Kafka 2.0.0 ([2.0.0-5.0.0](https://github.com/parrot-stream/docker-kafka/blob/2.0.0-5.0.0/Dockerfile), [latest](https://github.com/parrot-stream/docker-kafka/blob/latest/Dockerfile))
 - Apache Kafka 1.1.1 ([1.1.1-4.1.2](https://github.com/parrot-stream/docker-kafka/blob/1.1.1-4.1.2/Dockerfile))
-- Apache Kafka 0.10.2.0 ([0.10.2.0](https://github.com/parrot-stream/docker-kafka/blob/0.10.2.0/Dockerfile))
-- Apache Kafka 0.10.0.1 ([0.10.0.1](https://github.com/parrot-stream/docker-kafka/blob/0.10.0.1/Dockerfile))
+- Apache Kafka 0.10.2.0 ([0.10.2.0-3.2.4](https://github.com/parrot-stream/docker-kafka/blob/0.10.2.0-3.2.4/Dockerfile))
+- Apache Kafka 0.10.0.1 ([0.10.0.1-3.0.1](https://github.com/parrot-stream/docker-kafka/blob/0.10.0.1-3.0.1/Dockerfile))
