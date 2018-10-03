@@ -29,7 +29,7 @@ For example, if you want the Kafka release 1.1.1 and the Kafka Rest in the Confl
 
 Run with Docker Compose:
 
-    docker-compose up
+    docker-compose -p parrot up
 
 ### Available tags:
 
