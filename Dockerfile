@@ -19,7 +19,7 @@ RUN easy_install supervisor
 RUN yum clean all
 
 # All Kafka Stuff
-RUN yum install -y confluent-kafka-$SCALA_VER confluent-kafka-rest confluent-kafka-connect-hdfs confluent-kafka-connect-jdbc confluent-schema-registry
+RUN yum install -y confluent-kafka-$SCALA_VER confluent-kafka-rest confluent-kafka-connect-hdfs confluent-kafka-connect-jdbc confluent-schema-registry confluent-cli
 
 WORKDIR /
 
